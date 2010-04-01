@@ -7,11 +7,11 @@ def nameCheck(dpath, bufStr):
     new = bufStr.lower()
 
     blacklist = [
-        ')','(',',','\'','&',' ','[',']',
-        ]
+            ')','(',',','\'','&',' ','[',']',
+            ]
     ignorelist = [
-        '',
-        ]       
+            '',
+            ]       
 
     if any(bl in new for bl in blacklist) or new != old:
         for ch in new:
@@ -20,12 +20,12 @@ def nameCheck(dpath, bufStr):
         os.rename(join(dpath,old),join(dpath,new))
 
 
-def main(arg):
-    for dirpath, dirs, files in os.walk(arg[0],topdown=False):
+def main():
+    for dirpath, dirs, files in os.walk(sys.argv[1],topdown=True):
         for d in dirs:
             nameCheck(dirpath, d)
         for f in files:
             nameCheck(dirpath, f)
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    main()
