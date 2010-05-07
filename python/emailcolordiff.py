@@ -25,8 +25,8 @@ MAIL_SERVER   = "localhost"
 MAIL_PORT     = 25
 
 # Git Email Variables
-GIT_MAIL_TO             = "gitops@yammer-inc.com"
-GIT_MAIL_FROM           = "no-reply@yammer-inc.com"
+GIT_MAIL_TO             = "someone@somewhere.com"
+GIT_MAIL_FROM           = "no-reply@somewhere.com"
 GIT_MAIL_SUBJECT_PREFIX = "[GIT] "
 
 
