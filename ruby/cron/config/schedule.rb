@@ -4,7 +4,7 @@
 # define my own job types
 
 every 1.day, :at => '10:30 am' do
-  command "sudo brew -v update"
+  command "brew -v update"
   # rake    "some:rake:task"
   # runner  "MyModel.task_to_run"
 end
