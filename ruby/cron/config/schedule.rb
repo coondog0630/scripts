@@ -1,18 +1,22 @@
 # My Cron Jobs in ruby, easier to read
 # using http://github.com/javan/whenever
 
-# define my own job types
-
-every 1.day, :at => '10:30 am' do
-  command "brew -v update"
-  # rake    "some:rake:task"
-  # runner  "MyModel.task_to_run"
+# unload the system apache if it's running
+every 1.day, :at => '1:00 pm' do 
+  command "sudo launchctl remove org.apache.httpd"
 end
 
+# update homebrew formulas
+every 1.day, :at => '1:30 pm' do
+  command "brew -v update"
+end
+
+# Git Pull all the ruby repos in my build directory
 every 1.day, :at => '2.30 pm' do
   command "cd ~/build/ruby; for i in *; do cd $i; git pull; cd ..; done"
 end
 
+# Git Pull all my yammer code in case I forgot to and people commit stuff
 every 1.day, :at => '2.35 pm' do
   command "yt; for i in *; do cd $i; gpl; cd ..; done"
 end
