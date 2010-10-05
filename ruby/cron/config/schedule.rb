@@ -17,6 +17,11 @@ every 1.day, :at => '2.30 pm' do
 end
 
 # Git Pull all my yammer code in case I forgot to and people commit stuff
-every 1.day, :at => '2.35 pm' do
+every 1.day, :at => '2:35 pm' do
   command "yt; for i in *; do cd $i; gpl; cd ..; done"
+end
+
+# delete incomplete music rips
+every 1.day, :at => '3:00 pm' do 
+  command "find /Users/sahilcooner/Music -name incomplete -exec rm -fr {} \;"
 end
